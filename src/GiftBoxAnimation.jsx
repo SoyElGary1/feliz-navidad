@@ -1,8 +1,8 @@
 import React, { useReducer } from "react";
 import "./GiftBotAnimation.css"
-import box from "./images/box2.png";
-import boxLid from "./images/box-lid2.png";
-import gala from "./images/gala2.png";
+import box from "./images/box.png";
+import boxLid from "./images/box-lid.png";
+import gala from "./images/gala.png";
 // import ConfettiGenerator from "./CanvasConfetti";
 import Confetti from "./confetti/Confetti";
 

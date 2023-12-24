@@ -33,7 +33,7 @@ body {
   position: absolute;
   left: 50%;
   transform: translate(-50%);
-  bottom: 10.4em;
+  bottom: 5.8em;
 }
 
 .jump {
@@ -90,6 +90,6 @@ body {
     bottom: 0;
   }
   to {
-    bottom: 30em;
+    bottom: 20em;
   }
 }
