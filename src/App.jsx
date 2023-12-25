@@ -1,41 +1,47 @@
 import { useState } from "react";
-import viteLogo from "/vite.svg";
-import useSound from 'use-sound';
-import song from './assets/song.mp3'
+import useSound from "use-sound";
+import song from "./assets/song.mp3";
 import "./App.css";
 import GiftBoxAnimation from "./GiftBoxAnimation";
+import { Home } from "./Home";
 
 function App() {
   const [state, setState] = useState(false);
 
-  
-  const [playSound, {stop}] = useSound(song, {volume: 0.25});
-  
+  const [playSound, { stop }] = useSound(song, { volume: 0.25 });
 
   const changeState = () => {
-    if(!state){
+    if (!state) {
       setState(true);
-    }else{
+    } else {
       setState(false);
+      stop();
     }
-  }
+  };
 
   const handleEvent = () => {
     changeState();
-    if(!state){
+    if (!state) {
       playSound();
-    }else{
+    } else {
       stop();
     }
-   
-
-   
-  }
+  };
 
   return (
     <>
-      {state === false ? <h1>hola</h1> : <GiftBoxAnimation />}
-      <button onClick={handleEvent}></button>
+      <div className="backgorund">
+        {state === false ? (
+          <button className="button" onClick={handleEvent}>
+            Un Regalito
+          </button>
+        ) : (
+          <button className="button" onClick={changeState}>
+            Feliz Navidad Gatita Linda
+          </button>
+        )}
+        {state === false ? <Home /> : <GiftBoxAnimation />}
+      </div>
     </>
   );
 }
